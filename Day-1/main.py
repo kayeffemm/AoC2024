@@ -5,19 +5,14 @@ right_arr = []
 
 with open(file, "r") as file:
     arr = file.readlines()
-
+    print(arr)
     for line in arr:
         # Remove the space
         num1, num2 = line.split(" " * 3)
 
         # Make it an integer
         num1 = int(num1)
-
-        # Remove line at the end
-        if num2[-1] == "\n":
-            num2 = int(num2[:-1])
-        else:
-            num2 = int(num2)
+        num2 = int(num2.strip())
 
         # Add numbers to left and right lists
         left_arr.append(num1)
